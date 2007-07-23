@@ -3,7 +3,7 @@ NAME
     serialization
 
 VERSION
-    This document refers to version 0.0599_05 of RPC::Serialized
+    This document refers to version 0.0601 of RPC::Serialized
 
 SYNOPSIS
      # for the RPC server...
@@ -651,14 +651,13 @@ DEPENDENCIES
     Exception::Class
     Module::MultiConf
     Readonly
-    UNIVERSAL
     Class::Accessor::Fast::Contained
 
     To use some optional features, you may require the following:
 
-    GDBM_File
     Net::Server
     Log::Dispatch
+    GDBM_File
 
 AUTHOR
     Oliver Gorwits "<oliver.gorwits@oucs.ox.ac.uk>"

@@ -1,7 +1,7 @@
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Exceptions.pm $
-# $LastChangedRevision: 1323 $
-# $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
+# $LastChangedRevision: 1361 $
+# $LastChangedDate: 2007-07-23 21:36:03 +0100 (Mon, 23 Jul 2007) $
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Exceptions;
@@ -34,13 +34,8 @@ sub import {
     *{Symbol::qualify_to_ref('throw_authz',caller())}
         = sub { RPC::Serialized::X::Authorization->throw(@_) };
 
-    # this trick courtesy of Perl Hacks (O'Reilly)
-    # it is to quiesce Carp::carp which is called from within Data::Serializer
+    # this is to quiesce Carp::carp which is called from within Data::Serializer
     # and turn its output into Carp::croak.
-
-    package Carp;
-    use subs 'carp';
-    package __PACKAGE__;
 
     use Carp;
     {

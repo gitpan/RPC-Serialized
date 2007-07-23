@@ -1,3 +1,7 @@
+librpc-serialized-perl (0.0601-1) unstable; urgency=low
+
+  * Remove prod of Carp package, to appease the CPAN indexer
+
 librpc-serialized-perl (0.0600-1) unstable; urgency=low
 
   * Bug fixes in tests
