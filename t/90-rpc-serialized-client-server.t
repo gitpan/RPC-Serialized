@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/90-rpc-serialized-client-server.t $
-# $LastChangedRevision: 1323 $
-# $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
+# $LastChangedRevision: 1359 $
+# $LastChangedDate: 2007-07-23 21:12:25 +0100 (Mon, 23 Jul 2007) $
 # $LastChangedBy: oliver $
 #
 
@@ -51,7 +51,6 @@ if ( $pid == 0 ) {    # child
     ok( eq_array( $res, \@args ) );
     eval { $c->foo( 1, 2, 3 ) };
     isa_ok( $@, 'RPC::Serialized::X::Application' );
-    print STDERR $@;
     is( $@->message, 'No handler for foo' );
 }
 

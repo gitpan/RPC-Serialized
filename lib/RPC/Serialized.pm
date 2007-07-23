@@ -1,7 +1,7 @@
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized.pm $
-# $LastChangedRevision: 1338 $
-# $LastChangedDate: 2007-07-11 15:44:13 +0100 (Wed, 11 Jul 2007) $
+# $LastChangedRevision: 1359 $
+# $LastChangedDate: 2007-07-23 21:12:25 +0100 (Mon, 23 Jul 2007) $
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized;
@@ -16,7 +16,7 @@ use Data::Serializer;
 use RPC::Serialized::Config;
 use RPC::Serialized::Exceptions;
 
-our $VERSION = '0.0599_05';
+our $VERSION = '0.0600';
 
 __PACKAGE__->mk_ro_accessors(qw/
     debug
@@ -162,7 +162,7 @@ RPC::Serialized - Subroutine calls over the network using common serialization
 
 =head1 VERSION
 
-This document refers to version 0.0599_05 of RPC::Serialized
+This document refers to version 0.0600 of RPC::Serialized
 
 =head1 SYNOPSIS
 
@@ -938,8 +938,6 @@ module requires the following:
 
 =item L<Readonly>
 
-=item L<UNIVERSAL>
-
 =item L<Class::Accessor::Fast::Contained>
 
 =back
@@ -948,11 +946,11 @@ To use some optional features, you may require the following:
 
 =over 4
 
-=item L<GDBM_File>
-
 =item L<Net::Server>
 
 =item L<Log::Dispatch>
+
+=item L<GDBM_File>
 
 =back
 

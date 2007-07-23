@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/21-rpc-serialized-init-serializer.t $
-# $LastChangedRevision: 1323 $
-# $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
+# $LastChangedRevision: 1359 $
+# $LastChangedDate: 2007-07-23 21:12:25 +0100 (Mon, 23 Jul 2007) $
 # $LastChangedBy: oliver $
 #
 
@@ -11,7 +11,6 @@ use warnings;
 
 use Test::More tests => 16;
 
-use IO::String;
 use Data::Serializer;
 
 use_ok('RPC::Serialized');

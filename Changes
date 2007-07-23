@@ -1,3 +1,8 @@
+librpc-serialized-perl (0.0600-1) unstable; urgency=low
+
+  * Bug fixes in tests
+  * Version bump for CPAN stable release
+
 librpc-serialized-perl (0.0599_05-1) unstable; urgency=low
 
   * Bug fixes in Server.pm

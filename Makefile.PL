@@ -10,7 +10,7 @@ WriteMakefile(
     PREREQ_PM         => {
         Data::Serializer  => '0.41',
         Exception::Class  => '1.19',
-        Module::MultiConf => 0,
+        Module::MultiConf => '0.02',
         Readonly          => '1.03',
         Class::Accessor::Fast::Contained => '0.05',
     },

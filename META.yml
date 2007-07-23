@@ -1,14 +1,14 @@
 # http://module-build.sourceforge.net/META-spec.html
 #XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
 name:         RPC-Serialized
-version:      0.0599_05
+version:      0.0600
 version_from: lib/RPC/Serialized.pm
 installdirs:  site
 requires:
     Class::Accessor::Fast::Contained: 0.05
     Data::Serializer:              0.41
     Exception::Class:              1.19
-    Module::MultiConf:             0
+    Module::MultiConf:             0.02
     Readonly:                      1.03
 
 distribution_type: module

@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/23-rpc-serialized-trace.t $
-# $LastChangedRevision: 1332 $
-# $LastChangedDate: 2007-07-11 13:20:35 +0100 (Wed, 11 Jul 2007) $
+# $LastChangedRevision: 1359 $
+# $LastChangedDate: 2007-07-23 21:12:25 +0100 (Mon, 23 Jul 2007) $
 # $LastChangedBy: oliver $
 #
 
@@ -11,7 +11,6 @@ use warnings;
 
 use Test::More tests => 16;
 
-use IO::String;
 use Data::Serializer;
 
 use_ok('RPC::Serialized');
