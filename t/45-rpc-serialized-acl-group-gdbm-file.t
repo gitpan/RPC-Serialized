@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-gdbm-file.t $
-# $LastChangedRevision: 1281 $
-# $LastChangedDate: 2007-07-02 17:09:10 +0100 (Mon, 02 Jul 2007) $
+# $LastChangedRevision: 1363 $
+# $LastChangedDate: 2007-07-24 19:00:05 +0100 (Tue, 24 Jul 2007) $
 # $LastChangedBy: oliver $
 #
 
@@ -12,10 +12,13 @@ use warnings FATAL => 'all';
 use Test::More tests => 15;
 
 use File::Temp 'tempfile';
-use GDBM_File;
 use URI::file;
 
-use_ok('RPC::Serialized::ACL::Group::GDBM_File');
+SKIP: {
+skip( "Cannot load GDBM_File", 15 )
+    unless eval{ require GDBM_File };
+
+use_ok( 'RPC::Serialized::ACL::Group::GDBM_File');
 can_ok( 'RPC::Serialized::ACL::Group::GDBM_File', 'new' );
 can_ok( 'RPC::Serialized::ACL::Group::GDBM_File', 'path' );
 can_ok( 'RPC::Serialized::ACL::Group::GDBM_File', 'hash' );
@@ -28,7 +31,7 @@ my $uri;
     my ( $fh, $path ) = tempfile( UNLINK => 1 );
     $fh->close();
     my %h;
-    tie( %h, 'GDBM_File', $path, GDBM_NEWDB, 0644 )
+    tie( %h, 'GDBM_File', $path, &GDBM_File::GDBM_NEWDB, 0644 )
         or die "Failed to tie GDBM file: $!";
     $h{$_} = 1 foreach @members;
     untie(%h) or die "Failed to untie GDBM file: $!";
@@ -45,3 +48,5 @@ foreach my $m (@members) {
     ok( $group->is_member($m) );
 }
 ok( not $group->is_member('quux') );
+
+}
