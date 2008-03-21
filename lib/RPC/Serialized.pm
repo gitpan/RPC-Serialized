@@ -1,7 +1,7 @@
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized.pm $
-# $LastChangedRevision: 1363 $
-# $LastChangedDate: 2007-07-24 19:00:05 +0100 (Tue, 24 Jul 2007) $
+# $LastChangedRevision: 1633 $
+# $LastChangedDate: 2008-03-21 13:18:47 +0000 (Fri, 21 Mar 2008) $
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized;
@@ -16,7 +16,7 @@ use Data::Serializer;
 use RPC::Serialized::Config;
 use RPC::Serialized::Exceptions;
 
-our $VERSION = '0.0602';
+our $VERSION = '0.0603';
 
 __PACKAGE__->mk_ro_accessors(qw/
     debug
@@ -162,7 +162,7 @@ RPC::Serialized - Subroutine calls over the network using common serialization
 
 =head1 VERSION
 
-This document refers to version 0.0602 of RPC::Serialized
+This document refers to version 0.0603 of RPC::Serialized
 
 =head1 SYNOPSIS
 

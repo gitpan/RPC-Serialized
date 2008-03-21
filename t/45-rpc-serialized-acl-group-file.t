@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-file.t $
-# $LastChangedRevision: 1323 $
-# $LastChangedDate: 2007-07-09 17:10:19 +0100 (Mon, 09 Jul 2007) $
+# $LastChangedRevision: 1633 $
+# $LastChangedDate: 2008-03-21 13:18:47 +0000 (Fri, 21 Mar 2008) $
 # $LastChangedBy: oliver $
 #
 
@@ -50,7 +50,7 @@ can_ok( $group, 'path' );
 is( $group->path, '/no/such/file' );
 eval { $group->is_member('foo') };
 isa_ok( $@, 'RPC::Serialized::X::System' );
-is( $@->message, "Failed to open /no/such/file: No such file or directory" );
+like( $@->message, qr{^Failed to open /no/such/file:} );
 
 my ( $fh, $path ) = tempfile( UNLINK => 1 );
 $fh->print(<<'EOT');
