@@ -1,3 +1,7 @@
+librpc-serialized-perl (0.0604-1) unstable; urgency=low
+
+  *  Further loosen regex on $! in tests - filesystem issues
+  
 librpc-serialized-perl (0.0603-1) unstable; urgency=low
 
   * Loosen test check for $! - some localized err msgs don't match test

@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/65-rpc-serialized-authz-handler-acl.t $
-# $LastChangedRevision: 1633 $
-# $LastChangedDate: 2008-03-21 13:18:47 +0000 (Fri, 21 Mar 2008) $
+# $LastChangedRevision: 1635 $
+# $LastChangedDate: 2008-03-30 20:33:48 +0100 (Sun, 30 Mar 2008) $
 # $LastChangedBy: oliver $
 #
 
@@ -21,7 +21,7 @@ is( $@->message, 'ACL path not specified' );
 
 eval { RPC::Serialized::AuthzHandler::ACL->new("/no/such/file") };
 isa_ok( $@, 'RPC::Serialized::X::System' );
-like( $@->message, qr{^Open /no/such/file failed:} );
+like( $@->message, qr{^Open .no.such.file failed:} );
 
 my ( $fh, $path ) = tempfile( UNLINK => 1 );
 $fh->print(<<'EOT');
