@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
 # $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-file.t $
-# $LastChangedRevision: 1635 $
-# $LastChangedDate: 2008-03-30 20:33:48 +0100 (Sun, 30 Mar 2008) $
+# $LastChangedRevision: 1637 $
+# $LastChangedDate: 2008-03-31 13:34:26 +0100 (Mon, 31 Mar 2008) $
 # $LastChangedBy: oliver $
 #
 
@@ -47,7 +47,7 @@ my $group
 isa_ok( $group, 'RPC::Serialized::ACL::Group' );
 isa_ok( $group, 'RPC::Serialized::ACL::Group::File' );
 can_ok( $group, 'path' );
-is( $group->path, '/no/such/file' );
+like( $group->path, qr{.no.such.file} );
 eval { $group->is_member('foo') };
 isa_ok( $@, 'RPC::Serialized::X::System' );
 like( $@->message, qr{^Failed to open .no.such.file:} );

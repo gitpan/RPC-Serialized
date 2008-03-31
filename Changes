@@ -1,3 +1,7 @@
+librpc-serialized-perl (0.0605-1) unstable; urgency=low
+
+  * Missed a path fix for previous.
+  
 librpc-serialized-perl (0.0604-1) unstable; urgency=low
 
   *  Further loosen regex on $! in tests - filesystem issues
