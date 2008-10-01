@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/21-rpc-serialized-init-serializer.t $
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/t/21-rpc-serialized-init-serializer.t $
 # $LastChangedRevision: 1359 $
-# $LastChangedDate: 2007-07-23 21:12:25 +0100 (Mon, 23 Jul 2007) $
+# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
 # $LastChangedBy: oliver $
 #
 

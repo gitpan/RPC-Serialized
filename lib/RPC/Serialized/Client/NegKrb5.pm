@@ -1,7 +1,7 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Client/NegKrb5.pm $
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Client/NegKrb5.pm $
 # $LastChangedRevision: 1308 $
-# $LastChangedDate: 2007-07-07 14:25:06 +0100 (Sat, 07 Jul 2007) $
+# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Client::NegKrb5;

@@ -1,7 +1,7 @@
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server.pm $
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/lib/RPC/Serialized/Server.pm $
 # $LastChangedRevision: 1338 $
-# $LastChangedDate: 2007-07-11 15:44:13 +0100 (Wed, 11 Jul 2007) $
+# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
 # $LastChangedBy: oliver $
 #
 package RPC::Serialized::Server;
@@ -195,7 +195,7 @@ sub process {
     my $alarm_bak = 0;
     my @token_bak = ();
 
-    while ( not $self->ifh->eof ) {
+    while ( 1 ) {
         my ($response, @token);
 
         eval {
@@ -218,28 +218,27 @@ sub process {
             $response = $self->exception($@);
         }
 
-        if ($response) {
-            $self->log_response($response);
+        last unless $response;
+        $self->log_response($response);
 
-            # use same serializer for response as on received msg
-            @token_bak = $self->set_token(@token)
-                if !$self->debug;
+        # use same serializer for response as on received msg
+        @token_bak = $self->set_token(@token)
+            if !$self->debug;
 
-            eval {
-                local $SIG{ALRM} = sub { die "Timeout on Send\n" };
-                $alarm_bak = alarm $self->timeout;
-                $self->send($response);
-                alarm $alarm_bak;
-            };
-            if ($@) {
-                alarm $alarm_bak;
-                $self->restore_token(@token_bak) if !$self->debug;
-                throw_system $@; # likely caught outside of RPC::Serialized
-            }
-
-            # restore our default serializer
+        eval {
+            local $SIG{ALRM} = sub { die "Timeout on Send\n" };
+            $alarm_bak = alarm $self->timeout;
+            $self->send($response);
+            alarm $alarm_bak;
+        };
+        if ($@) {
+            alarm $alarm_bak;
             $self->restore_token(@token_bak) if !$self->debug;
+            throw_system $@; # likely caught outside of RPC::Serialized
         }
+
+        # restore our default serializer
+        $self->restore_token(@token_bak) if !$self->debug;
     }
 
     alarm $alarm_bak;

@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #
-# $HeadURL: https://svn.oucs.ox.ac.uk/networks/src/debian/packages/libr/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-gdbm-file.t $
+# $HeadURL: https://svn.oucs.ox.ac.uk/people/oliver/pub/librpc-serialized-perl/trunk/t/45-rpc-serialized-acl-group-gdbm-file.t $
 # $LastChangedRevision: 1363 $
-# $LastChangedDate: 2007-07-24 19:00:05 +0100 (Tue, 24 Jul 2007) $
+# $LastChangedDate: 2008-10-01 16:16:56 +0100 (Wed, 01 Oct 2008) $
 # $LastChangedBy: oliver $
 #
 
