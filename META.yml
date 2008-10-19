@@ -1,15 +1,28 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         RPC-Serialized
-version:      0.0701
-version_from: lib/RPC/Serialized.pm
-installdirs:  site
-requires:
-    Class::Accessor::Fast::Contained: 0.05
-    Data::Serializer:              0.41
-    Exception::Class:              1.19
-    Module::MultiConf:             0.02
-    Readonly:                      1.03
-
+---
+abstract: 'Subroutine calls over the network using common serialization'
+author:
+  - 'Oliver Gorwits C<< <oliver.gorwits@oucs.ox.ac.uk> >>'
+build_requires:
+  IO::Socket::SSL: 0
+  Test::More: 0
+  URI: 0
 distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30_01
+generated_by: 'Module::Install version 0.77'
+license: gpl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: RPC-Serialized
+no_index:
+  directory:
+    - inc
+    - t
+    - examples
+requires:
+  Class::Accessor::Fast::Contained: 0.05
+  Data::Serializer: 0.41
+  Exception::Class: 1.19
+  Module::MultiConf: 0.02
+  Readonly: 1.03
+  perl: 5.8.1
+version: 0.0702
