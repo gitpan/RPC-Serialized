@@ -5,10 +5,12 @@ author:
 build_requires:
   IO::Socket::SSL: 0
   Test::More: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
   URI: 0
 distribution_type: module
 generated_by: 'Module::Install version 0.77'
-license: gpl
+license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -18,6 +20,11 @@ no_index:
     - inc
     - t
     - examples
+recommends:
+  IO::Socket::NegKrb5: 0
+  IO::Socket::SSL: 0
+  Net::Server::PreFork: 0
+  URI: 0
 requires:
   Class::Accessor::Fast::Contained: 0.05
   Data::Serializer: 0.41
@@ -25,4 +32,6 @@ requires:
   Module::MultiConf: 0.02
   Readonly: 1.03
   perl: 5.8.1
-version: 0.0702
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.0701
