@@ -1,10 +1,12 @@
 Changes
 examples/acl.conf
-examples/client.pl
+examples/inet-client.pl
+examples/inet-server.pl
 examples/ipcserver.run
 examples/mkgdbm
 examples/rpc-serialized-server
 examples/server.yml
+examples/unix-client.pl
 inc/Module/Install.pm
 inc/Module/Install/Base.pm
 inc/Module/Install/Can.pm
@@ -38,6 +40,7 @@ lib/RPC/Serialized/Handler/Localtime.pm
 lib/RPC/Serialized/Handler/Sleep.pm
 lib/RPC/Serialized/Server.pm
 lib/RPC/Serialized/Server/NetServer.pm
+lib/RPC/Serialized/Server/NetServer/Single.pm
 lib/RPC/Serialized/Server/NetServer/SSL.pm
 lib/RPC/Serialized/Server/STDIO.pm
 lib/RPC/Serialized/Server/UCSPI.pm
